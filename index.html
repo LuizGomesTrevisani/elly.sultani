@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elli Sultani Junior - Imóveis de Luxo</title>
+    <meta name="description" content="Especialista em imóveis de luxo Elli Sultani Junior - Propriedades premium e empreendimentos exclusivos">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Elli Sultani Junior</h2>
+                <span>Imóveis de Luxo</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#developments" class="nav-link">Empreendimentos</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+                <li><a href="#admin" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Propriedades de Luxo Redefinidas</h1>
+            <p>Descubra empreendimentos exclusivos e oportunidades imobiliárias premium</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('developments')">Ver Propriedades</button>
+                <button class="btn-secondary" onclick="openScheduleModal()">Agendar Visita</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties Preview -->
+    <section class="featured-preview">
+        <div class="container">
+            <h2>Empreendimentos em Destaque</h2>
+            <div id="featured-properties" class="property-grid">
+                <!-- Dinamicamente populado -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop" alt="Elli Sultani Junior" id="agent-photo">
+                </div>
+                <div class="about-text">
+                    <h2>Sobre Elli Sultani Junior</h2>
+                    <p class="agent-bio">Com mais de uma década de experiência em imóveis de luxo, Elli Sultani Junior se especializa em propriedades de alto padrão e empreendimentos exclusivos. Conhecido pelo serviço excepcional e profundo conhecimento do mercado, Elli ajudou inúmeros clientes a encontrar suas propriedades dos sonhos nas localizações mais prestigiosas.</p>
+                    <div class="credentials">
+                        <p><strong>CRECI:</strong> <span id="creci-number">12345-F</span></p>
+                        <p><strong>Especialidade:</strong> Imóveis de Luxo e Premium</p>
+                        <p><strong>Região de Atuação:</strong> <span id="operating-region">Bairros Premium</span></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developments Section -->
+    <section id="developments" class="developments">
+        <div class="container">
+            <h2>Empreendimentos Exclusivos</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todas as Propriedades</button>
+                <button class="filter-btn" data-filter="available">Disponível</button>
+                <button class="filter-btn" data-filter="reserved">Reservado</button>
+                <button class="filter-btn" data-filter="sold">Vendido</button>
+            </div>
+            <div id="properties-grid" class="property-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>+55 (11) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>elli@luxuryrealestate.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Escritório</h4>
+                            <p>Centro Empresarial Premium</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu Email" required>
+                        <input type="tel" placeholder="Seu Telefone" required>
+                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="admin">
+        <div class="container">
+            <div class="admin-login" id="admin-login">
+                <h2>Acesso Administrativo</h2>
+                <form id="admin-login-form">
+                    <input type="password" id="admin-password" placeholder="Digite a senha admin" required>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                </form>
+            </div>
+            <div class="admin-panel" id="admin-panel" style="display: none;">
+                <h2>Gerenciamento de Propriedades</h2>
+                <form id="property-form">
+                    <div class="form-group">
+                        <label>Nome da Propriedade</label>
+                        <input type="text" id="property-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Endereço</label>
+                        <input type="text" id="property-address" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preço</label>
+                        <input type="text" id="property-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea id="property-description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagens (URLs, uma por linha)</label>
+                        <textarea id="property-images" rows="3" placeholder="https://imagem1.jpg&#10;https://imagem2.jpg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>PDFs (URLs, uma por linha)</label>
+                        <textarea id="property-pdfs" rows="3" placeholder="https://pdf1.pdf&#10;https://pdf2.pdf"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>URL do Vídeo (opcional)</label>
+                        <input type="url" id="property-video">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="property-status" required>
+                            <option value="available">Disponível</option>
+                            <option value="reserved">Reservado</option>
+                            <option value="sold">Vendido</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Adicionar Propriedade</button>
+                </form>
+                <div class="admin-settings">
+                    <h3>Configurações do Site</h3>
+                    <div class="form-group">
+                        <label>Região de Atuação</label>
+                        <input type="text" id="operating-region-input" placeholder="Digite a região de atuação">
+                        <button type="button" onclick="updateOperatingRegion()" class="btn-secondary">Atualizar</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Número CRECI</label>
+                        <input type="text" id="creci-input" placeholder="Digite o número CRECI">
+                        <button type="button" onclick="updateCreci()" class="btn-secondary">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div id="property-modal" class="modal">
+        <div class="modal-content property-detail-modal">
+            <span class="close">&times;</span>
+            <div id="property-detail">
+                <!-- Dinamicamente populado -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Property Modal -->
+    <div id="edit-property-modal" class="modal">
+        <div class="modal-content edit-property-modal">
+            <span class="close">&times;</span>
+            <h2>Editar Propriedade</h2>
+            <form id="edit-property-form">
+                <input type="hidden" id="edit-property-index">
+                <div class="form-group">
+                    <label>Nome da Propriedade</label>
+                    <input type="text" id="edit-property-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Endereço</label>
+                    <input type="text" id="edit-property-address" required>
+                </div>
+                <div class="form-group">
+                    <label>Preço</label>
+                    <input type="text" id="edit-property-price" required>
+                </div>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea id="edit-property-description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Imagens (URLs, uma por linha)</label>
+                    <textarea id="edit-property-images" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>PDFs (URLs, uma por linha)</label>
+                    <textarea id="edit-property-pdfs" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>URL do Vídeo (opcional)</label>
+                    <input type="url" id="edit-property-video">
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="edit-property-status" required>
+                        <option value="available">Disponível</option>
+                        <option value="reserved">Reservado</option>
+                        <option value="sold">Vendido</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="submit" class="btn-primary">Salvar Alterações</button>
+                    <button type="button" class="btn-secondary" onclick="closeEditModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Schedule Visit Modal -->
+    <div id="schedule-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agendar uma Visita</h2>
+            <form id="schedule-form">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="visitor-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="visitor-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" id="visitor-phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Data Preferida</label>
+                    <input type="date" id="visit-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Propriedade Selecionada</label>
+                    <select id="selected-property" required>
+                        <option value="">Selecione uma propriedade</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Agendar Visita</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- WhatsApp Chat Button -->
+    <div id="whatsapp-chat" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="chat-tooltip">Converse conosco!</div>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-viewer-modal" class="modal">
+        <div class="modal-content pdf-viewer-content">
+            <div class="pdf-viewer-header">
+                <h3 id="pdf-title">Visualizar Documento</h3>
+                <div class="pdf-controls">
+                    <button class="pdf-control-btn" onclick="downloadPDF()" title="Baixar PDF">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="pdf-control-btn" onclick="openPDFNewTab()" title="Abrir em nova aba">
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+            <div class="pdf-viewer-container">
+                <iframe id="pdf-iframe" src="" frameborder="0"></iframe>
+                <div id="pdf-error" class="pdf-error" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Não foi possível carregar o PDF. <a href="#" onclick="openPDFNewTab()">Clique aqui para abrir em nova aba</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Chatbot Modal -->
+    <div id="chatbot-modal" class="modal">
+        <div class="modal-content chatbot-content">
+            <div class="chatbot-header">
+                <h3>Chat com Elli Sultani Junior</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="bot-message">
+                    <p>Olá! Como posso ajudá-lo hoje?</p>
+                    <div class="quick-questions">
+                        <button class="quick-btn" onclick="askQuestion('que propriedades estão disponíveis?')">Propriedades Disponíveis</button>
+                        <button class="quick-btn" onclick="askQuestion('como agendar uma visita?')">Agendar Visita</button>
+                        <button class="quick-btn" onclick="askQuestion('vocês ajudam com financiamento?')">Ajuda com Financiamento</button>
+                        <button class="quick-btn" onclick="askQuestion('onde vocês atuam?')">Áreas de Atuação</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Digite sua pergunta...">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
